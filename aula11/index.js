@@ -22,3 +22,10 @@ const num3 = 4;
 console.log(num1 + num2 * num3); // nesse caso como na matemática a multiplicação vem primeiro a adição 
 
 console.log((num1 + num2) * num3); // caso queiramos que a soma seja executada primeiro temos que envolver a expressão em parentesis também como na matemática
+
+// como converter uma String que seja número e um valor do type number
+const n1 = 5;
+const n2 = parseInt('4'); // temos que ter certeza que a String é um número. para números inteiros (parseInt) flutuantes (float) ou se não quisermos distiguir so colocamos (Number)
+console.log(n1 + n2);
+
+
