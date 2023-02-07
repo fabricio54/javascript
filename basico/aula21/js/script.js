@@ -22,21 +22,17 @@ function meuEscopo () {
         const peso = form.querySelector('.peso');
         const altura = form.querySelector('.altura');
 
-        function criaPessoa(nome, sobrenome, peso, altura) {
-            return {
-                nome: nome,
-                sobrenome: sobrenome,
-                peso: peso,
-                altura: altura
-            }
-        }
-        
-        pessoas.push(criaPessoa(nome.value, sobrenome.value, peso.value, altura.value));
+        pessoas.push({
+            nome: nome.ariaValue,
+            sobrenome: sobrenome.value,
+            peso: peso.value,
+            altura: altura.value
+        })
 
         console.log(pessoas);
+
+        resultado.innerHTML += `<p>${nome.value} ${sobrenome.value} ${peso.value} ${altura.value}</p>`;
     }
-    
     form.addEventListener('submit', recebeEventoForm);
-    resultado.innerHTML += `<p>${pessoas[pessoas.length -1]}</p>`;
 }
 meuEscopo();
