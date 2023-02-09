@@ -23,7 +23,7 @@ function meuEscopo () {
         const altura = form.querySelector('.altura');
 
         pessoas.push({
-            nome: nome.ariaValue,
+            nome: nome.Value,
             sobrenome: sobrenome.value,
             peso: peso.value,
             altura: altura.value
