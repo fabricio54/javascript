@@ -5,13 +5,11 @@ const elementos = [
     {tag: 'section', texto: 'Frase 4'},
 ];
 
-const section = document.querySelector('.container');
-section.;
-
+//const div = document.querySelector(".div");
 
 
 for(let i = 0; elementos.length; i++) {
     //section.innerHTML += `<${elementos[i].tag}> ${elementos[i].texto} </${elementos[i].tag}>`;
-    section.innerHTML += `<${elementos[i].tag}> ${elementos[i].texto} </${elementos[i].tag}>`;
+    div.innerHTML += `<${elementos[i].tag}> ${elementos[i].texto} </${elementos[i].tag}>`;
 };
 
