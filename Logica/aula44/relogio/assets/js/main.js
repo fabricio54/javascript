@@ -42,8 +42,8 @@ function relogio() {
 
     if(el.classList.contains('pausar')) {
       // quando apertar em pausar ele para com a função
-    clearInterval(timer);
-    relogio.classList.add('pausado');
+      clearInterval(timer);
+      relogio.classList.add('pausado');
     }
 
   });
