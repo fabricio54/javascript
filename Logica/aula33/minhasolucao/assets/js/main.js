@@ -5,7 +5,7 @@ const elementos = [
     {tag: 'section', texto: 'Frase 4'},
 ];
 
-//const div = document.querySelector(".div");
+const div = document.querySelector(".div");
 
 
 for(let i = 0; elementos.length; i++) {
