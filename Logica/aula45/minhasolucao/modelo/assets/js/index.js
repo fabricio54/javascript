@@ -1,11 +1,7 @@
-const lista = document.querySelector('.container');
+const inputTarefa = document.querySelector('.input-tarefa');
+const btnTarefa = document.querySelector('.btn-tarefa');
+const tarefas = document.querySelector('.tarefas');
 
-lista.addEventListener('click', function(event) {
-    const click = event.target;
-    if(click.classList.contains('input')){
-        const texto = lista.querySelector('texto');
-        const p = lista.createElement('p');
-        p.innerHTML = texto;
-        lista.appendChild(p);
-    }
-});
+btnTarefa.addEventListener('click', function(e) {
+    
+})
