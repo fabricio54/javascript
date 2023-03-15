@@ -48,3 +48,14 @@ f1(function () {
 
 f1(f1Callback);
 
+function f1Callback() {
+    f2(f2Callback);
+}
+
+function f2Callback() {
+    f3(f3Calback);
+}
+
+function f3Calback() {
+    console.log("Olá Mundo!");
+}
