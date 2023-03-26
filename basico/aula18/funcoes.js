@@ -29,7 +29,7 @@ function soma(x = 0, y = 0) { // caso a função não receba parâmetros ele ter
 //console.log(raiz(12));
 //console.log(raiz(48));
 
-// maneira mais moderna de criação de função: eram funcion
+// maneira mais moderna de criação de função: eram function
 
 // podemos criar dessa maneira
 //const raiz = (n) => {
