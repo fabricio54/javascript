@@ -14,3 +14,5 @@ nomes.splice(0, 2, 'Vanderleia', 'Fabricio');
 nomes.splice(nomes.length, 1);
 //const removidos = nomes.splice(3, 2); // removendo o elemento apartir do indice e quantidade
 console.log(nomes);
+nomes.splice(0, 2);
+console.log(nomes);
