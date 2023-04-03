@@ -16,6 +16,7 @@ Produto.prototype.desconto = function(quantia) {
 // criando uma classe camiseta
 function Camiseta(nome, preco, cor) {
     // estamos linkando o produto atraves do método da classe produto. passando um objeto no caso o próprio e os atributos nome e preco
+    this.cor = cor;
     Produto.call(this, nome, preco);
 }
 
@@ -26,8 +27,43 @@ Camiseta.prototype = Object.create(Produto.prototype);
 
 Camiseta.prototype.constructor = Camiseta;
 
+// sobrescrevendo o método aumento
+Camiseta.prototype.aumento = function(percentual) {
+    this.preco = this.preco + (this.preco * (percentual / 100));
+}
+
 const camiseta = new Camiseta('Manga', 220,'branca');
 
 console.log(camiseta);
+
+function Caneca(nome, preco, material, estoque) {
+    Produto.call(this, nome, preco);
+    this.material = material;
+
+    Object.defineProperty(this, 'estoque', {
+        enumerable: true,
+        configurable: false, // não posso configurar
+        get: function() { // retorna o estoque
+            return estoque;
+        },
+        set: function(valor) { // configura o estoque
+            if(typeof valor !== 'number') {
+                estoque = valor;
+            }
+        }
+    });
+}
+
+Caneca.prototype = Object.create(Produto.prototype);
+
+Caneca.prototype.constructor = Caneca;
+
+const caneca = new Caneca('Esmer', 23.23, 'Porcelana', 4);
+
+console.log(caneca);
+caneca.aumento(50);
+console.log(caneca.estoque);
+
+
 
 
