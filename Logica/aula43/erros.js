@@ -58,8 +58,8 @@ function funcaDoInterval() {
 
 const timer = setInterval(function(){
     console.log(mostraHora());
-}, 1000);
+}, 10000);
 
 setTimeout(function() {
     clearInterval(timer)
-}, 1000);
+}, 10000);
