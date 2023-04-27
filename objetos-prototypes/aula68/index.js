@@ -13,7 +13,7 @@ const outraCoisa = {...produto}; // copiando o objeto para a constante
 outraCoisa.nome = 'Leo';
 console.log(outraCoisa);
 
-// utilando outro método para copiar
+// utizando outro método para copiar
 const caneca = Object.assign({}, produto); // utilizamos o método assign onde passamos um objeto vazio e que queremos copiar
 console.log(caneca);
 

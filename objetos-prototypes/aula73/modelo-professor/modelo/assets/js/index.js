@@ -26,15 +26,13 @@ function ValidaCPF(cpfEnviado) {
 ValidaCPF.prototype.valida = function() {
     if(typeof this.cpfLimpo === 'undefined') return false;
     if(this.cpfLimpo.length !== 11 ) return false;
+    if(this.isSequencia()) return false;
     let cpfParcial = this.cpfLimpo.slice(0, -2);
     console.log(cpfParcial);
     const digitoUm = this.criaDigito(cpfParcial);
-    cpfParcial = this.cpfLimpo.slice(0, -1);
-    console.log(cpfParcial);
-    const digitoDois = this.criaDigito(cpfParcial);
-    console.log(digitoUm, digitoDois);
-    const cpfEvalido = this.cpfValidade(digitoUm, digitoDois, this.cpfLimpo);
-    return cpfEvalido ? 'Cpf válido' : 'Cpf inválido';
+    const digitoDois = this.criaDigito(cpfParcial + digitoUm);
+    const novoCpf = cpfParcial + digitoUm + digitoDois;
+    return novoCpf === cpfLimpo;
 }
 
 ValidaCPF.prototype.criaDigito = function(cpfParcial) {
@@ -42,23 +40,13 @@ ValidaCPF.prototype.criaDigito = function(cpfParcial) {
 
     let regressivo = cpfArray.length + 1;
     const total = cpfArray.reduce((ac, val) => {
-        ac += (regressivo * val);
+        ac += (regressivo * Number(val));
         regressivo--;
         return ac;
     }, 0);
 
     let digito = 11 - (total % 11);
-    if(digito > 9) {
-        digito = 0;
-    }
-
-    return digito;
-}
-
-ValidaCPF.prototype.cpfValidade = function (digitoUm, digitoDois, cpf) {
-    if (digitoUm === Number(cpf[cpf.length - 2]) && digitoDois === Number(cpf[cpf.length - 1])) {
-        return true;
-    }return false;
+    return digito > 9 ? '0' : String(digito);
 }
 /*
 const cpf = new ValidaCPF('705.484.450-52');
@@ -66,19 +54,16 @@ console.log(cpf.cpfLimpo);
 console.log(cpf.valida());
 */
 
-function iniciar() {
+ValidaCPF.prototype.isSequencia = function() {
+    return this.cpfLimpo[0].repeat(this.cpfLimpo.length + 1) === this.cpfLimpo;
+};
 
-    const textoCpf = document.querySelector('.form');
-    textoCpf.addEventListener('submit', function(e) {
-        e.preventDefault();
-        const inputCpf = document.querySelector('.text-cpf');
-        const resultado = document.querySelector('.resultado');
-        const cpf = new ValidaCPF(inputCpf.value);
-        console.log(inputCpf.value);
-        resultado.innerHtml = cpf.valida();
-    })
-}
+const cpfUsuario = document.querySelector('.cpf').value;
 
-iniciar();
+document.addEventListener('submit', e => {
+  e.preventDefault();
+  const cpf = ValidaCPF(cpfUsuario);
+  prompt(cpf.valida());
+});
 
 
