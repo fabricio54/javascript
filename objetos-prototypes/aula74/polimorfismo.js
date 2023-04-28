@@ -29,9 +29,29 @@ Conta.prototype.verSaldo = function() {
         `Saldo: R$ ${this.saldo.toFixed(2)}`);
 };
 
-const conta = new Conta(11, 22, 50);
 
-console.log(conta);
+function ContaCorrente(agencia, conta, saldo, limite) {
+    Conta.call(this, agencia, conta, saldo);
+    this.limite = limite;
+}
 
-conta.depositar(200);
-conta.sacar(1000);
+// sobrescrevendo o método sacar 
+ContaCorrente.prototype.sacar = function (valor) {
+    if (valor > (this.saldo + this.limite)) {
+
+    }
+
+    this.saldo -= valor;
+    this.verSaldo();
+}
+
+// linkando o prototype das contas 
+ContaCorrente.prototype = Object.create(Conta.prototype);
+// definindo o construtor de conta corrente
+ContaCorrente.prototype.constructor = ContaCorrente;
+
+const contaCorrent = new ContaCorrente(11, 22,  0, 100);
+contaCorrent.depositar(10);
+
+contaCorrent.sacar(90);
+
