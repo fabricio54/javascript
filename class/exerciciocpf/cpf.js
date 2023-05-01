@@ -16,26 +16,29 @@ se o digito for maior que 9 considera 0
 
 class Cpf {
     constructor(cpf) {
-        this.cpf = cpf.replace(/\d+/g, '');
+        this.cpf = cpf.replace(/\D+/g, '');
     }
 
     valida() {
-        if(this.cpf.lenght !== 11) return;
-        let cpfParcial = cpf.slice(0, -2);
+        if(typeof this.cpf === 'undefined') return false;
+        if(this.cpf.length !== 11 ) return false;
+        let cpfParcial = this.cpf.slice(0, -2);
+        console.log(cpfParcial);
         const primeiroNum = this.pegaDigito(cpfParcial);
-        const segundoNum = this.pegaDigito(cpfParcial + primeiroNum);
+        //const segundoNum = this.pegaDigito(cpfParcial + primeiroNum);
     }
 
     pegaDigito(cpfParcial) {
-        const cpf = cpfParcial.split('');
-        let cont = cpfParcial.lenght + 1;
-        const numUm = cpf.reduce(function (ac, val) {
-            ac = Number(val) * cont;
-            cont--;
+        const cpfArray = Array.from(cpfParcial);
+        console.log(cpfArray);
+        let regressivo = cpfArray.lenght + 1;
+        const total = cpfArray.reduce((ac, val) => {
+            console.log(ac, val);
+            ac += (regressivo * Number(val));
+            regressivo--;
             return ac;
-        }).reduce((ac, valor) => ac += valor);
+        }, 0);
 
-        console.log(numUm);
     }
 }
 
