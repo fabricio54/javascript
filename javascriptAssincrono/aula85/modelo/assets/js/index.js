@@ -53,7 +53,7 @@ async function carregaPagina(el) {
     // englobando num catch 
     try {
         const response = await request(ObjConfig);
-    carregaResultado(response);
+        carregaResultado(response);
     }catch (error) {
         console.log(error);
     }
