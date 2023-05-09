@@ -1,23 +1,31 @@
+//utilizando fetch api
+/*
 fetch('pessoas.json')
   .then(resposta => resposta.json())
   .then(json => carregaElementoDaPagina(json));
+*/
+
+// utilizando axious:
+// com esse método não precisamos converter em json ele retorna altomaticamente os dados
+axios('pessoas.json')
+  .then(resposta => carregaElementoDaPagina(resposta.data));
 
 function carregaElementoDaPagina(json) {
   const table = document.createElement('table');
   for(let pessoa of json) {
     const tr = document.createElement('tr');
     
-    const tdNome = document.createElement('td');
-    tdNome.innerHTML = pessoa.nome;
-    tr.appendChild(tdNome);
+    let td = document.createElement('td');
+    td.innerHTML = pessoa.nome;
+    tr.appendChild(td);
 
-    const tdSexo = document.createElement('td');
-    tdSexo.innerHTML = pessoa.sexo;
-    tr.appendChild(tdSexo);
+    td = document.createElement('td');
+    td.innerHTML = pessoa.sexo;
+    tr.appendChild(td);
 
-    const tdIdade = document.createElement('td');
-    tdIdade.innerHTML = pessoa.idade;
-    tr.appendChild(tdIdade);
+    td = document.createElement('td');
+    td.innerHTML = pessoa.idade;
+    tr.appendChild(td);
 
     table.appendChild(tr);
   }

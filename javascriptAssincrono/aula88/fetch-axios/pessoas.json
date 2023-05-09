@@ -1,0 +1,41 @@
+[
+  {
+    "nome": "Fabricio",
+    "sobrenome": "Alves",
+    "sexo": "M",
+    "email": "fabricioallves@gmail.com",
+    "password": "fabricio1997"
+  },
+
+  {
+    "nome": "Vanderleia",
+    "sobrenome": "Lucena",
+    "sexo": "F",
+    "email": "vanderleialucena@gmail.com",
+    "password": "vandinha21"
+  },
+
+  {
+    "nome": "Aryosmar",
+    "sobrenome": "Felipe",
+    "sexo": "M",
+    "email": "aryfelipe@gmail.com",
+    "password": "ary11"
+  },
+
+  {
+    "nome": "Pedro",
+    "sobrenome": "Lima",
+    "sexo": "M",
+    "email": "pedrolima@gmail.com",
+    "password": "pedro234"
+  },
+
+  {
+    "nome": "Raimundo",
+    "sobrenome": "Galego",
+    "sexo": "M",
+    "email": "raystarck@gmail.com",
+    "password": "ray234"
+  }
+]
