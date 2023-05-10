@@ -4,7 +4,7 @@ const sobrenome = 'Alves';
 // exportando diretamente
 export const idade = 26;
 
-export function soma(x, y) {
+export default function soma(x, y) {
     return x + y;
 }
 

@@ -11,10 +11,10 @@
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "Pessoa": () => (/* binding */ Pessoa),
+/* harmony export */   "default": () => (/* binding */ soma),
 /* harmony export */   "idade": () => (/* binding */ idade),
 /* harmony export */   "nome": () => (/* binding */ nome),
-/* harmony export */   "sobrenome": () => (/* binding */ sobrenome),
-/* harmony export */   "soma": () => (/* binding */ soma)
+/* harmony export */   "sobrenome": () => (/* binding */ sobrenome)
 /* harmony export */ });
 function _typeof(obj) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (obj) { return typeof obj; } : function (obj) { return obj && "function" == typeof Symbol && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }, _typeof(obj); }
 function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, _toPropertyKey(descriptor.key), descriptor); } }
@@ -107,7 +107,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var nome = 'liupamp';
 console.log(nome, _modulo01__WEBPACK_IMPORTED_MODULE_0__.sobrenome, _modulo01__WEBPACK_IMPORTED_MODULE_0__.idade);
-console.log((0,_modulo01__WEBPACK_IMPORTED_MODULE_0__.soma)(5, 5));
+console.log((0,_modulo01__WEBPACK_IMPORTED_MODULE_0__.somar)(5, 5));
 })();
 
 /******/ })()
