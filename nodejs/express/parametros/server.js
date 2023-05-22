@@ -19,10 +19,12 @@ app.get('/formulario', (req, res) => {
     `);
 });
 
-// colocando parâmetros na url: chave idUsuarios:valor na url (123 por exemplo)
-app.get('/teste/:idUsuarios', (req, res) => {
+// colocando parâmetros na url: chave idUsuarios:valor na url (123 por exemplo) tudo que for informado na url logo apos teste/ será mostrado no documento. observação: ao colocarmos uma interrogação o parâmetro pode ou não ser recebido (assim podemos acessar o teste)
+app.get('/teste/:idUsuarios?', (req, res) => {
     console.log(req.params);
-    res.send('oi');
+    //res.send(req.params);
+    res.send(req.query.facebook)
+    //console.log(req.query); // pegando as tostrings que foram informadas na url
 })
 
 app.post('/', (req, res) => {
