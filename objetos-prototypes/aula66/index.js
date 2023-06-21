@@ -7,7 +7,7 @@ function Produto(nome, preco, estoque) {
         enumerable: true, // mostra a chave
         value: estoque, // valor da chave
         writable: false, // permissão para alterar
-        configurable: true // permissão para alterar, apagar
+        configurable: true // permissão para reconfigurar ou apagar
     });
  
     // feito para fazer varios propriedades ao mesmo tempo
@@ -16,7 +16,7 @@ function Produto(nome, preco, estoque) {
             enumerable: true, // mostra a chave
             value: nome, // valor da chave
             writable: false, // permissão para alterar
-            configurable: true // permissão para alterar, apagar
+            configurable: true // permissão para reconfigurar ou apagar
         },
 
         preco: {
@@ -32,3 +32,4 @@ const p1 = new Produto('Camiseta', 20, 3);
 console.log(p1);
 delete p1.estoque; // permitido se o configurable estiver true
 console.log(p1);
+console.log(Object.keys(p1))
