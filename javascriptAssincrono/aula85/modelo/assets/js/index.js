@@ -97,7 +97,26 @@ document.addEventListener('click', (e) => {
     if (tag === 'a') {
         e.preventDefault()
         carregaPagina(el)
-    }else {
-        
+
+}})
+
+async function carregaPagina(elemento) {
+    const href = elemento.getAttribute('href')
+
+    const object = {
+        method: 'GET',
+        url: href
     }
-})
+
+    try {
+        const resultado = await request(object)
+        carregaResultado(resultado)
+    } catch (error) {
+        console.log(error)
+    }
+}
+
+function carregaResultado(resultado) {
+    const div = document.querySelector('.resultado')
+    div.innerHTML = resultado
+}
