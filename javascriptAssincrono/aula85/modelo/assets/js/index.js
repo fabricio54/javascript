@@ -1,5 +1,6 @@
 // trabalhando como o xml (ajax). pode fazer requisição de qualquer tipo de dado
 
+/*
 const request = obj => { // criamos uma requisição que recebe um ojbjeto
     return new Promise((resolve, reject) => {
         const xhr = new XMLHttpRequest(); // utilizamos uma constante que recebe um construtor de xmlhttprequest
@@ -16,7 +17,9 @@ const request = obj => { // criamos uma requisição que recebe um ojbjeto
         })
         })
 }
+*/
 
+/*
 document.addEventListener('click', e => {
     const el = e.target; // pegando o elemento clicado
     const tag = el.tagName.toLowerCase();
@@ -27,7 +30,9 @@ document.addEventListener('click', e => {
         carregaPagina(el);
     }
 })
+*/
 
+/*
 async function carregaPagina(el) {
     // criando uma constante para pegar o href
     const href = el.getAttribute('href');
@@ -44,7 +49,8 @@ async function carregaPagina(el) {
         console.log(error);
     })
     */
-
+     
+    /*
     const ObjConfig =  ({
         method: 'GET', 
         url: href
@@ -58,9 +64,40 @@ async function carregaPagina(el) {
         console.log(error);
     }
 }
+*/
 
 // carregando aquela página a onde foi chamada a função utilizando xml (ajax) (para não ter que recarregar a página novamente)
+/*
 function carregaResultado(response) {
     const resultado = document.querySelector('.resultado');
     resultado.innerHTML = response;
 }
+*/
+
+const request = object => {
+    return new Promise((resolve, reject) => {
+        const xhr = new XMLHttpRequest()
+        xhr.open(object.method, object.url, true)
+        xhr.send()
+
+        document.addEventListener('load', () => {
+            if(xhr.status >= 200 && xhr.status < 300) {
+                resolve(xhr.responseText)
+            }else{
+                reject(xhr.statusText)
+            }
+        })
+    })
+}
+
+document.addEventListener('click', (e) => {
+    const el = e.target
+    const tag = el.tagName.toLowerCase()
+
+    if (tag === 'a') {
+        e.preventDefault()
+        carregaPagina(el)
+    }else {
+        
+    }
+})
