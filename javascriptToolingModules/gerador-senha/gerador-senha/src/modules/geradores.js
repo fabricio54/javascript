@@ -1,5 +1,5 @@
 // utilizando uma função interna do js para gerar caracteres
-const rand = (min, max) => Math.floor(Math.random() * (max - min) + max);
+const rand = (min, max) => Math.floor(Math.random() * (max - min) + min);
 
 const geraMaiuscula = () => String.fromCharCode(rand(65, 91));
 
@@ -34,4 +34,4 @@ export default function geraSenha(qtd, maiusculas, minusculas, numeros, simbolos
     return senhaArray.join('').slice(0, qtd);
 }
 
-geraSenha(8, true, true, true);
+
